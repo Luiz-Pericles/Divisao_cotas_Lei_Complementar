@@ -1,5 +1,5 @@
-from codigo.separadorcotaslicitacao import SeparadorCotasLicitacao
-from codigo.classificar_itens import classificar_itens
+
+from classificar_itens import classificar_itens
 import pandas as pd
 import streamlit as st
 
