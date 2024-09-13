@@ -7,9 +7,10 @@ from io import BytesIO
 
 def to_excel(df):
     output = BytesIO()
-    writer = pd.ExcelWriter(output, engine='xlsxwriter')
-    df.to_excel(writer, index=False, sheet_name='Sheet1')
-    writer.save()
+    # Gerenciar o ExcelWriter com o contexto 'with'
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False, sheet_name='Sheet1')
+        # writer.save() não é necessário aqui
     processed_data = output.getvalue()
     return processed_data
     
@@ -35,7 +36,8 @@ def main():
             label="Baixar Planilha Classificada",
             data=excel_data,
             file_name="planilha_classificada.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
 
 if __name__ == '__main__':
     main()
