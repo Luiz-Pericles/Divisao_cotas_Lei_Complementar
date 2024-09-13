@@ -35,7 +35,7 @@ def main():
             label="Baixar Planilha Classificada",
             data=excel_data,
             file_name="planilha_classificada.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
 if __name__ == '__main__':
     main()
