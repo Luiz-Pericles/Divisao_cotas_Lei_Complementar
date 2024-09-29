@@ -24,10 +24,7 @@ def main():
     
     if uploaded_file:
         df = pd.read_excel(uploaded_file)
-        #Confere o titulo das colunas
-        if conferir_entrada_de_dados(df):
-            # Aplicar a função de classificação
-            df_classificado = classificar_itens(df)
+        df_classificado = classificar_itens(df)
 
         # Mostrar o DataFrame classificado
         st.write(df_classificado)
