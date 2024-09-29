@@ -59,7 +59,7 @@ def classificar_itens(df):
 def conferir_entrada_de_dados(planilha_excel):
     titulo_das_colunas = planilha_excel.columns
     verificacao_nome_das_colunas = [
-        'N°', 'DESCRIÇÃO', 'UNIDADE FORNECIMENTO', 'QUANTIDADE', 'VALOR ESTIMADO']
+        'N', 'DESCRIÇÃO', 'UNIDADE', 'QUANTIDADE', 'VALOR ESTIMADO']
     numero_verificador = 0 
     for i in range(0, 5):
         if verificacao_nome_das_colunas[i] == titulo_das_colunas[i]:
