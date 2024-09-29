@@ -1,5 +1,5 @@
 
-from codigo.classificar_itens import classificar_itens, conferir_entrada_de_dados
+from classificar_itens import classificar_itens, conferir_entrada_de_dados
 import pandas as pd
 import streamlit as st
 from io import BytesIO
