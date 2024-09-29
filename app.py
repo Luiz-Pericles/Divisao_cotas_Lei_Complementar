@@ -16,7 +16,7 @@ def to_excel(df):
     
 
 def main():
-    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência")
+    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência 2.0")
 
     # Upload do arquivo Excel
     uploaded_file = st.file_uploader(
