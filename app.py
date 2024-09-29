@@ -1,5 +1,5 @@
 
-from classificar_itens import classificar_itens
+from codigo.classificar_itens import classificar_itens, conferir_entrada_de_dados
 import pandas as pd
 import streamlit as st
 from io import BytesIO
@@ -24,7 +24,10 @@ def main():
     
     if uploaded_file:
         df = pd.read_excel(uploaded_file)
-        df_classificado = classificar_itens(df)
+        #Confere o titulo das colunas
+        if conferir_entrada_de_dados(df):
+            # Aplicar a função de classificação
+            df_classificado = classificar_itens(df)
 
         # Mostrar o DataFrame classificado
         st.write(df_classificado)
