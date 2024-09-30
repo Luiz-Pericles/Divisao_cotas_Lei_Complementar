@@ -66,7 +66,6 @@ def main():
         )
     else:
         st.error("O arquivo não pôde ser baixado.")
-)
 
 if __name__ == '__main__':
     main()
