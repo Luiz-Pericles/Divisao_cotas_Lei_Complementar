@@ -1,5 +1,5 @@
 
-from classificar_itens import classificar_itens, conferir_entrada_de_dados, carregar_instrucoes
+from classificar_itens import classificar_itens, conferir_entrada_de_dados, carregar_instrucoes, baixar_planilha_github
 import pandas as pd
 import streamlit as st
 from io import BytesIO
