@@ -47,11 +47,13 @@ def classificar_itens(df):
             item_cota_ampla = row.copy()
             item_cota_ampla['VALOR ESTIMADO'] = cota_ampla_valor
             item_cota_ampla['QUANTIDADE'] = cota_ampla_quantidade
-            item_cota_ampla['CLASSIFICAÇÃO'] = 'Ampla concorrência' 
-            # Para adicionar a linha do item de cota ampla:
-            nova_tabela.append(item_cota_ampla)
-            # Para criar a linha do item exclusivo depois: 
-            nova_tabela.append(item_cota_exclusiva)
+            item_cota_ampla['CLASSIFICAÇÃO'] = 'Ampla concorrência'
+            if 'item_cota_ampla' in locals():
+                # Para adicionar a linha do item de cota ampla:
+                nova_tabela.append(item_cota_ampla)
+            if 'item_cota_exclusiva' in locals():
+                # Para criar a linha do item exclusivo depois: 
+                nova_tabela.append(item_cota_exclusiva)
 
     return pd.DataFrame(nova_tabela)
 
