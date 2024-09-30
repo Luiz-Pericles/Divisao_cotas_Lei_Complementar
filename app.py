@@ -1,5 +1,5 @@
 
-from classificar_itens import classificar_itens, conferir_entrada_de_dados
+from classificar_itens import classificar_itens, conferir_entrada_de_dados, carregar_instrucoes
 import pandas as pd
 import streamlit as st
 from io import BytesIO
@@ -42,6 +42,13 @@ def main():
             file_name="planilha_classificada.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
+
+    #Campo como usar no streamlit:
+    st.header("Como usar a ferramenta: ")
+
+    # Carregar e exibir o arquivo .txt com as explicações
+    instrucoes = carregar_instrucoes('como_usar.txt')  # Certifique-se de que o arquivo .txt está no diretório correto
+    st.text(instrucoes)
 
 if __name__ == '__main__':
     main()

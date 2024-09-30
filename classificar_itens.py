@@ -74,6 +74,12 @@ def conferir_entrada_de_dados(planilha_excel):
         return True
 
 
+def carregar_instrucoes(arquivo_txt):
+    with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
+        instrucoes = arquivo.read()
+    return instrucoes   
+
+
 
 
 
