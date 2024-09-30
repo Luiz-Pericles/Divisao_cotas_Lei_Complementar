@@ -5,6 +5,7 @@ import streamlit as st
 from io import BytesIO
 
 
+
 def to_excel(df):
     output = BytesIO()
     # Gerenciar o ExcelWriter com o contexto 'with'
@@ -16,7 +17,7 @@ def to_excel(df):
     
 
 def main():
-    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência 3.1")
+    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência 3.2")
 
     # Upload do arquivo Excel
     uploaded_file = st.file_uploader(
@@ -49,6 +50,16 @@ def main():
     # Carregar e exibir o arquivo .txt com as explicações
     instrucoes = carregar_instrucoes('como_usar.txt')  # Certifique-se de que o arquivo .txt está no diretório correto
     st.text(instrucoes)
+
+    url_da_planilha = 'https://github.com/Luiz-Pericles/Divisao_cotas_Lei_Complementar/blob/main/Planilha_Exemplo.xlsx'
+
+    # Botão para download da planilha .xlsx
+    st.download_button(
+    label="Baixar Planilha de Exemplo",
+    data=baixar_planilha_github(url_planilha),  # Baixa o arquivo diretamente do GitHub
+    file_name='planilha_exemplo.xlsx',
+    mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+)
 
 if __name__ == '__main__':
     main()

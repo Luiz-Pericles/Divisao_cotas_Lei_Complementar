@@ -1,7 +1,8 @@
 import pandas as pd
 import math
-# Função para classificar os itens conforme as regras
+import requests
 
+# Função para classificar os itens conforme as regras
 
 def classificar_itens(df):
     nova_tabela = []
@@ -77,7 +78,12 @@ def conferir_entrada_de_dados(planilha_excel):
 def carregar_instrucoes(arquivo_txt):
     with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
         instrucoes = arquivo.read()
-    return instrucoes   
+    return instrucoes 
+
+# Função para baixar o arquivo xlsx do GitHub
+def baixar_planilha_github(url):
+    response = requests.get(url)
+    return response.content  # Retorna o conteúdo do arquivo .xlsx  
 
 
 
