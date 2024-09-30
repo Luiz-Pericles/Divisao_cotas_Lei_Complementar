@@ -51,7 +51,7 @@ def main():
     instrucoes = carregar_instrucoes('como_usar.txt')  # Certifique-se de que o arquivo .txt está no diretório correto
     st.text(instrucoes)
 
-    url_da_planilha = 'https://github.com/Luiz-Pericles/Divisao_cotas_Lei_Complementar/blob/main/Planilha_Exemplo.xlsx'
+    url_da_planilha = 'https://github.com/Luiz-Pericles/Divisao_cotas_Lei_Complementar/raw/main/Planilha_Exemplo.xlsx'
 
     # Botão para download da planilha .xlsx
     st.download_button(
