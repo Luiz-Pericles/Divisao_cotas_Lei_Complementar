@@ -1,9 +1,12 @@
-TESTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+Este script em Python foi desenvolvido para auxiliar na aplicação das regras do art. 48 da Lei Complementar nº 123, de 14 de dezembro de 2006, que estabelece critérios para a participação de Microempresas (ME) e Empresas de Pequeno Porte (EPP) em licitações públicas.
 
-1
+1 - Insira a planilha com a tabela de itens no formato suportado (.xlsx).
 
+Observações sobre a planilha: 
+    - Lembre-se que a planilha deve está no formato da planilha modelo disponível para baixar. 
+    - O título das colunas seguem o seguinte padrão: 'N', 'DESCRIÇÃO', 'UNIDADE FORNECIMENTO', 'QUANTIDADE', 'VALOR ESTIMADO'
+    - A planilha não pode conter outros dados além da tabela com os itens para serem classificados.
 
-2
+2 - Execute o script para processar a divisão de acordo com as regras do art. 48 da Lei Complementar nº 123/2006.
 
-
----ZABUZAAAA %%%
+3 - O script gerará uma nova planilha com a classificação dos itens, disponível para download.
