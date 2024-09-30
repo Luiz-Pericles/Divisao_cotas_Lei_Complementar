@@ -1,5 +1,5 @@
 
-from classificar_itens import classificar_itens, conferir_entrada_de_dados, carregar_instrucoes, baixar_planilha_github
+from classificar_itens import classificar_itens, conferir_entrada_de_dados, carregar_instrucoes, gerar_planilha_exemplo
 import pandas as pd
 import streamlit as st
 from io import BytesIO
@@ -51,21 +51,21 @@ def main():
     instrucoes = carregar_instrucoes('como_usar.txt')  # Certifique-se de que o arquivo .txt está no diretório correto
     st.text(instrucoes)
 
-    url_da_planilha = 'https://github.com/Luiz-Pericles/Divisao_cotas_Lei_Complementar/raw/main/Planilha_Exemplo.xlsx'
+    # Gerar a planilha de exemplo
+    df = gerar_planilha_exemplo()
 
-    # Baixar a planilha
-    arquivo_xlsx = baixar_planilha_github(url_planilha)
+    # Botão para download da planilha .xlsx
+    st.download_button(
+        label="Baixar Planilha de Exemplo",
+        data=df.to_excel(index=False, engine='openpyxl'),  # Salva o DataFrame em formato Excel
+        file_name='planilha_exemplo.xlsx',
+        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
 
-    # Verificar se o arquivo foi baixado corretamente antes de exibir o botão de download
-    if arquivo_xlsx:
-        st.download_button(
-            label="Baixar Planilha de Exemplo",
-            data=arquivo_xlsx,  # Baixa o arquivo diretamente do GitHub
-            file_name='planilha_exemplo.xlsx',
-            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        )
-    else:
-        st.error("O arquivo não pôde ser baixado.")
+    # Se você quiser exibir a planilha na própria interface
+    st.write("Prévia da planilha:")
+    st.dataframe(df)
+
 
 if __name__ == '__main__':
     main()
