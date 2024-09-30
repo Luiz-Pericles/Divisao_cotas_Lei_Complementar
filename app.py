@@ -53,12 +53,19 @@ def main():
 
     url_da_planilha = 'https://github.com/Luiz-Pericles/Divisao_cotas_Lei_Complementar/raw/main/Planilha_Exemplo.xlsx'
 
-    # Botão para download da planilha .xlsx
-    st.download_button(
-    label="Baixar Planilha de Exemplo",
-    data=baixar_planilha_github(url_planilha),  # Baixa o arquivo diretamente do GitHub
-    file_name='planilha_exemplo.xlsx',
-    mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    # Baixar a planilha
+    arquivo_xlsx = baixar_planilha_github(url_planilha)
+
+    # Verificar se o arquivo foi baixado corretamente antes de exibir o botão de download
+    if arquivo_xlsx:
+        st.download_button(
+            label="Baixar Planilha de Exemplo",
+            data=arquivo_xlsx,  # Baixa o arquivo diretamente do GitHub
+            file_name='planilha_exemplo.xlsx',
+            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
+    else:
+        st.error("O arquivo não pôde ser baixado.")
 )
 
 if __name__ == '__main__':

@@ -82,8 +82,16 @@ def carregar_instrucoes(arquivo_txt):
 
 # Função para baixar o arquivo xlsx do GitHub
 def baixar_planilha_github(url):
-    response = requests.get(url)
-    return response.content  # Retorna o conteúdo do arquivo .xlsx  
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:  # Se a resposta for bem-sucedida
+            return response.content  # Retorna o conteúdo do arquivo .xlsx
+        else:
+            st.error(f"Erro ao baixar o arquivo: {response.status_code}")
+            return None
+    except Exception as e:
+        st.error(f"Erro ao tentar acessar o arquivo: {e}")
+        return None  
 
 
 
