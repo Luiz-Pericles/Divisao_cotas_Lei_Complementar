@@ -1,9 +1,8 @@
 import pandas as pd
 import math
-import streamlit as st
-
-
 # Função para classificar os itens conforme as regras
+
+
 def classificar_itens(df):
     nova_tabela = []
 
@@ -59,7 +58,7 @@ def classificar_itens(df):
 def conferir_entrada_de_dados(planilha_excel):
     titulo_das_colunas = planilha_excel.columns
     verificacao_nome_das_colunas = [
-        'N', 'DESCRIÇÃO', 'UNIDADE', 'QUANTIDADE', 'VALOR ESTIMADO']
+        'N', 'DESCRIÇÃO', 'UNIDADE FORNECIMENTO', 'QUANTIDADE', 'VALOR ESTIMADO']
     numero_verificador = 0 
     for i in range(0, 5):
         if verificacao_nome_das_colunas[i] == titulo_das_colunas[i]:
@@ -71,5 +70,10 @@ def conferir_entrada_de_dados(planilha_excel):
     else:
         print("Nomes das colunas da planilha verificada!")
         return True
+
+
+
+
+
 
 

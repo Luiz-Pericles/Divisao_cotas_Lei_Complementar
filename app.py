@@ -16,7 +16,7 @@ def to_excel(df):
     
 
 def main():
-    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência 2.0")
+    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência 3.0")
 
     # Upload do arquivo Excel
     uploaded_file = st.file_uploader(
@@ -24,7 +24,11 @@ def main():
     
     if uploaded_file:
         df = pd.read_excel(uploaded_file)
-        df_classificado = classificar_itens(df)
+        if conferir_entrada_de_dados(df):
+            df_classificado = classificar_itens(df)
+        else:
+            print("Entrada de dados invalida")
+
 
         # Mostrar o DataFrame classificado
         st.write(df_classificado)
