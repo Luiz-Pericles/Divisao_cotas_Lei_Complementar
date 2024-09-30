@@ -1,6 +1,6 @@
 import pandas as pd
 import math
-import requests
+
 
 # Função para classificar os itens conforme as regras
 
@@ -80,17 +80,6 @@ def carregar_instrucoes(arquivo_txt):
         instrucoes = arquivo.read()
     return instrucoes 
 
-def gerar_planilha_exemplo():
-    # Cria uma planilha de exemplo
-    dados = {
-        'N': [1, 2, 3, 4],
-        'DESCRIÇÃO': ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-        'UNIDADE FORNECIMETNO': ['Unidade', Unidade', Unidade', Unidade']
-        'QUANTIDADE': [10, 20, 30, 40],
-        'VALOR ESTIMADO': [100.00, 200.00, 300.00, 400.00]
-    }
-    df = pd.DataFrame(dados)
-    return df
 
 
 
