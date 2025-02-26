@@ -52,7 +52,7 @@ def classificar_itens(df):
             if 'item_cota_ampla' in locals():
                 # Para adicionar a linha do item de cota ampla:
                 nova_tabela.append(item_cota_ampla)
-            if 'item_cota_exclusiva' in locals():
+            if 'item_cota_exclusiva' in locals() and cota_exclusiva_valor != 0:
                 # Para criar a linha do item exclusivo depois: 
                 nova_tabela.append(item_cota_exclusiva)
 
