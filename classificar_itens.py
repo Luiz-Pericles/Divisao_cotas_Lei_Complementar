@@ -20,6 +20,7 @@ def classificar_itens(df):
             # Nesse primeiro caso, ele vai verificar se os 25% é maior que 80k
             # Caso seja maior que 80k, ele vai limitar o valor da cota exclusiva até 80k, e consequetemente a '%' ficará menor que 25%
             cota_exclusiva_valor = valor_estimado * 0.25
+            print(f"para o item {row['N']}, o cota_exclusiva_valor é: {cota_exclusiva_valor}")
             if cota_exclusiva_valor > 80000:
                 cota_exclusiva_valor = 80000
                 # Calcular a quantidade proporcional para a cota exclusiva com base no valor ajustado
@@ -32,6 +33,7 @@ def classificar_itens(df):
                 cota_exclusiva_quantidade = (quantidade * cota_exclusiva_valor) / valor_estimado
                 cota_exclusiva_quantidade = math.floor(cota_exclusiva_quantidade)
                 cota_exclusiva_valor = (valor_estimado / quantidade) * cota_exclusiva_quantidade
+                
 
             if cota_exclusiva_valor != 0:
                 item_cota_exclusiva = row.copy()
