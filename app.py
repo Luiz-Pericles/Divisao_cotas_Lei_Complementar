@@ -16,7 +16,7 @@ def to_excel(df):
     
 
 def main():
-    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência 3.2")
+    st.title("Classificação de Itens para ME/EPP e Ampla Concorrência")
 
     # Upload do arquivo Excel
     uploaded_file = st.file_uploader(
@@ -44,7 +44,7 @@ def main():
         )
 
     #Campo como usar no streamlit:
-    st.header("Como usar a ferramenta: ")
+    st.header("O que é a ferramenta e como usar: ")
 
     # Carregar e exibir o arquivo .txt com as explicações
     instrucoes = carregar_instrucoes('como_usar.txt')  # Certifique-se de que o arquivo .txt está no diretório correto
